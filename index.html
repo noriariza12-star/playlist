@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>My Playlist 💫</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body{
@@ -28,13 +29,17 @@
             border: 3px solid #FFB7DA;
             border-radius: 20px;
             padding: 15px;
-            width: 340px;
-            transition: 0.3s;
+            width: 90%;
+            transition: all 0.35s ease;
+            position: relative;
         }
 
         .song-card:hover{
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 0 10px #ff7eb6,
+                        0 0 25px #D9F9DF,
+                        0 0 45px #D9F9DF;
+            border-color: #ff4fa3;
         }
 
         .song-title{
@@ -64,6 +69,16 @@
             font-size: 26px;
             font-weight: bold;
             color: #021A54;
+        }
+        @media (max-width: 600px){
+            .playlist{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            body{
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -108,18 +123,18 @@
         const mybutton = document.getElementById("mybutton");
 
         const img = document.createElement("img");
-        img.src = "https://i.pinimg.com/736x/8b/b5/0d/8bb50d19f707284d78cf6bf4bab9dabf.jpg";
+        img.src = "https://i.pinimg.com/736x/74/43/0f/74430f469afc97386bdd968951516396.jpg";
 
-        const loserText = document.createElement("p");
-        loserText.textContent = "Loser";
-        loserText.classList.add("loser-text");
+        const pooksText = document.createElement("p");
+        pooksText.textContent = "pooks";
+        pooksText.classList.add("pooks-text");
 
         let clicked = false;
 
         mybutton.addEventListener("click", () => {
             if (!clicked) {
                 document.body.append(img);
-                document.body.append(loserText);
+                document.body.append(pooksText);
                 clicked = true;
             }
         });
