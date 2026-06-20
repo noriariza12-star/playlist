@@ -1,0 +1,129 @@
+<html>
+<head>
+    <title>My Playlist 💫</title>
+
+    <style>
+        body{
+            text-align: center;
+            background: linear-gradient(135deg, #ff85bb, #ffd1e8);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1{
+            color: #021A54;
+        }
+
+        .playlist{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .song-card{
+            background: #FFE5F3;
+            border: 3px solid #FFB7DA;
+            border-radius: 20px;
+            padding: 15px;
+            width: 340px;
+            transition: 0.3s;
+        }
+
+        .song-card:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .song-title{
+            font-weight: bold;
+            color: #021A54;
+            margin-bottom: 10px;
+        }
+
+        button{
+            background-color: #53a8e1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+
+        img{
+            display: block;
+            margin: 20px auto;
+            max-width: 250px;
+            border-radius: 12px;
+        }
+
+        .loser-text{
+            font-size: 26px;
+            font-weight: bold;
+            color: #021A54;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎧 My Playlist</h1>
+
+    <div class="playlist">
+
+        <div class="song-card">
+            <div class="song-title">💿 Track 1</div>
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/10JsYPcjhsD9nwTuk51Jtb"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="song-card">
+            <div class="song-title">✨ Track 2</div>
+            <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/1Bm14jIaZuZTfhemzMN7xD"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <button id="mybutton">🎀 pick me choose me</button>
+
+    <script>
+        const mybutton = document.getElementById("mybutton");
+
+        const img = document.createElement("img");
+        img.src = "https://i.pinimg.com/736x/8b/b5/0d/8bb50d19f707284d78cf6bf4bab9dabf.jpg";
+
+        const loserText = document.createElement("p");
+        loserText.textContent = "Loser";
+        loserText.classList.add("loser-text");
+
+        let clicked = false;
+
+        mybutton.addEventListener("click", () => {
+            if (!clicked) {
+                document.body.append(img);
+                document.body.append(loserText);
+                clicked = true;
+            }
+        });
+    </script>
+
+</body>
+</html>
